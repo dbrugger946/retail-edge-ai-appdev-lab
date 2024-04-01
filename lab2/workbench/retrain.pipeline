@@ -36,7 +36,7 @@
             "label": "load_data",
             "ui_data": {
               "label": "load_data",
-              "image": "/notebook/tf/wb1/static/elyra/notebook.svg",
+              "image": "/notebook/user1-lab2-ds/user1-wb/static/elyra/notebook.svg",
               "x_pos": 157,
               "y_pos": 137,
               "description": "Run notebook file"
@@ -95,7 +95,7 @@
             "label": "create_model",
             "ui_data": {
               "label": "create_model",
-              "image": "/notebook/tf/wb1/static/elyra/notebook.svg",
+              "image": "/notebook/user1-lab2-ds/user1-wb/static/elyra/notebook.svg",
               "x_pos": 386,
               "y_pos": 172,
               "description": "Run notebook file"
@@ -166,7 +166,7 @@
             "label": "push_model",
             "ui_data": {
               "label": "push_model",
-              "image": "/notebook/tf/wb1/static/elyra/notebook.svg",
+              "image": "/notebook/user1-lab2-ds/user1-wb/static/elyra/notebook.svg",
               "x_pos": 618,
               "y_pos": 210,
               "description": "Run notebook file"
@@ -233,7 +233,7 @@
               "description": "Source bucket from where to load training data",
               "default_value": {
                 "type": "String",
-                "value": "edge1-data"
+                "value": "data"
               },
               "required": true
             },
@@ -242,7 +242,7 @@
               "description": "Repository bucket where to keep all trained models",
               "default_value": {
                 "type": "String",
-                "value": "edge1-models"
+                "value": "models"
               },
               "required": true
             },
@@ -251,7 +251,7 @@
               "description": "Target bucket where to push last trained model",
               "default_value": {
                 "type": "String",
-                "value": "edge1-ready"
+                "value": "ready"
               },
               "required": true
             },
@@ -284,9 +284,9 @@
             }
           ],
           "pipeline_defaults": {
-            "kubernetes_tolerations": [],
             "kubernetes_pod_annotations": [],
             "kubernetes_pod_labels": [],
+            "kubernetes_shared_mem_size": {},
             "mounted_volumes": [
               {
                 "path": "/data",
@@ -294,7 +294,7 @@
                 "read_only": false
               }
             ],
-            "kubernetes_shared_mem_size": {},
+            "kubernetes_tolerations": [],
             "env_vars": [],
             "kubernetes_secrets": [],
             "runtime_image": "quay.io/opendatahub-contrib/workbench-images:cuda-runtime-tensorflow-c9s-py39_2023c_latest"
